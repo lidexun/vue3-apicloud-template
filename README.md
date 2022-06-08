@@ -1,4 +1,4 @@
-# vue-apicloud
+# hello-world
 
 ## Project setup
 ```
@@ -13,11 +13,6 @@ pnpm run serve
 ### Compiles and minifies for production
 ```
 pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
 ```
 
 ### Customize configuration
