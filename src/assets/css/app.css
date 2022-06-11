@@ -1,3 +1,63 @@
 html {
   touch-action: manipulation;
+  box-sizing: border-box;
+  /* font-size: calc(100vw / 7.5); */
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  word-break: break-word;
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  background-color: #fff;
+  font-feature-settings: 'tnum';
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+input,
+button,
+textarea {
+  border: 0;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: text;
+  appearance: text;
 }
