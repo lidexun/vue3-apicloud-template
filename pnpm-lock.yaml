@@ -4,10 +4,15 @@ specifiers:
   '@vue/cli-plugin-babel': ^5.0.4
   '@vue/cli-plugin-router': ~5.0.0
   '@vue/cli-service': ~5.0.0
+  babel-plugin-import: ^1.13.5
+  core-js: ^3.8.3
+  vant: ^3.5.0
   vue: ^3.2.13
   vue-router: ^4.0.3
 
 dependencies:
+  core-js: 3.22.8
+  vant: 3.5.0_vue@3.2.37
   vue: 3.2.37
   vue-router: 4.0.15_vue@3.2.37
 
@@ -15,6 +20,7 @@ devDependencies:
   '@vue/cli-plugin-babel': 5.0.4_9cdfe65639711716d1fdddf38cad02d7
   '@vue/cli-plugin-router': 5.0.4_@vue+cli-service@5.0.4
   '@vue/cli-service': 5.0.4
+  babel-plugin-import: 1.13.5
 
 packages:
 
@@ -1319,6 +1325,10 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
+  /@popperjs/core/2.11.5:
+    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
+    dev: false
+
   /@sideway/address/4.1.4:
     resolution: {integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==}
     dependencies:
@@ -1486,6 +1496,20 @@ packages:
     dependencies:
       '@types/node': 17.0.41
     dev: true
+
+  /@vant/icons/1.8.0:
+    resolution: {integrity: sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg==}
+    dev: false
+
+  /@vant/popperjs/1.2.1:
+    resolution: {integrity: sha512-qzQlrPE4aOsBzfrktDVwzQy/QICCTKifmjrruhY58+Q2fobUYp/T9QINluIafzsD3VJwgP8+HFVLBsyDmy3VZQ==}
+    dependencies:
+      '@popperjs/core': 2.11.5
+    dev: false
+
+  /@vant/use/1.4.1:
+    resolution: {integrity: sha512-YonNN0SuJLEJuqdoMcVAJm2JUZWkHNrW81QzeF6FLyG5HFUGlmTM5Sby7gdS3Z/8UDMlkWRQpJxBWbmVzmUWxQ==}
+    dev: false
 
   /@vue/babel-helper-vue-jsx-merge-props/1.2.1:
     resolution: {integrity: sha512-QOi5OW45e2R20VygMSNhyQHvpdUwQZqGPc748JLGCYEy+yp8fNFNdbNIGAgZmi9e+2JHPd6i6idRuqivyicIkA==}
@@ -2207,6 +2231,12 @@ packages:
       object.assign: 4.1.2
     dev: true
 
+  /babel-plugin-import/1.13.5:
+    resolution: {integrity: sha512-IkqnoV+ov1hdJVofly9pXRJmeDm9EtROfrc5i6eII0Hix2xMs5FEm8FG3ExMvazbnZBbgHIt6qdO8And6lCloQ==}
+    dependencies:
+      '@babel/helper-module-imports': 7.16.7
+    dev: true
+
   /babel-plugin-polyfill-corejs2/0.3.1_@babel+core@7.18.2:
     resolution: {integrity: sha512-v7/T6EQcNfVLfcN2X8Lulb7DjprieyLWJK/zOWH5DUYcAgex9sP3h25Q+DLsX9TloXe3y1O8l2q2Jv9q8UVB9w==}
     peerDependencies:
@@ -2656,7 +2686,6 @@ packages:
   /core-js/3.22.8:
     resolution: {integrity: sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==}
     requiresBuild: true
-    dev: true
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -5645,6 +5674,17 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /vant/3.5.0_vue@3.2.37:
+    resolution: {integrity: sha512-9j8cKNp5i1aHf6S91dlwmuISah13+Kjao7ichLnWv7vCHR4qH9uLCNNaQoy4Vdqt/v4uKQro52OKt/otUXZx5w==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vant/icons': 1.8.0
+      '@vant/popperjs': 1.2.1
+      '@vant/use': 1.4.1
+      vue: 3.2.37
+    dev: false
 
   /vary/1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
