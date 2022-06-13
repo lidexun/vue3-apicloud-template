@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from './api/axios'
 import './assets/css/app.css'
+import FastClick from 'fastclick'
 import {
   Cell,
   CellGroup,
@@ -56,3 +57,13 @@ app
   .use(ConfigProvider)
 
 app.mount('#app')
+
+if ('addEventListener' in document) {
+  document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+      FastClick.attach(document.body)
+    },
+    false
+  )
+}
