@@ -24,9 +24,21 @@
           <van-icon name="chat-o" class="icon" />
         </div>
       </van-row>
+      <van-nav-bar
+        class="border_b"
+        v-show="active === 'sort'"
+        :title="'分类'"
+        :border="false"
+      />
+      <van-nav-bar
+        class="border_b"
+        v-show="active === 'cart'"
+        :title="'购物车'"
+        :border="false"
+      />
     </header>
     <div class="view"></div>
-    <div ref="footer">
+    <div class="border_t" ref="footer">
       <van-tabbar
         v-model="active"
         :route="false"
@@ -96,6 +108,7 @@ const tabbarChange = async (name) => {
     })
   }
   const index = tabbars.findIndex((item) => item.name === name)
+  await nextTick()
   /* DOM更新 */
   const item = tabbars[index]
   const data = {
@@ -103,7 +116,7 @@ const tabbarChange = async (name) => {
     url: item.to,
     rect: {
       marginLeft: 0,
-      marginTop: name === 'home' ? header.value.offsetHeight : 0,
+      marginTop: name === 'user' ? 0 : header.value.offsetHeight,
       marginBottom: footer.value.offsetHeight,
       marginRight: 0
     },
@@ -118,8 +131,15 @@ const tabbarChange = async (name) => {
   openFrame(data)
 }
 onMounted(() => {
-  console.log(process.env)
   window.apiready = () => {
+    setTimeout(() => {
+      api.removeLaunchView({
+        animation: {
+          type: 'fade',
+          duration: 300
+        }
+      })
+    }, 2000)
     api.setStatusBarStyle({
       style: 'dark'
     })

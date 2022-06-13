@@ -61,3 +61,47 @@ textarea {
   -webkit-appearance: text;
   appearance: text;
 }
+.border_t,
+.border_b {
+  position: relative;
+}
+.border_t::before,
+.border_b::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 1px;
+  width: 100%;
+}
+.border_t::before {
+  top: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(60%, rgba(0, 0, 0, 0.05)),
+    color-stop(0%, rgba(0, 0, 0, 0))
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 60%,
+    rgba(0, 0, 0, 0) 0%
+  );
+}
+.border_b::after {
+  bottom: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(60%, rgba(0, 0, 0, 0.05)),
+    color-stop(0%, rgba(0, 0, 0, 0))
+  );
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.05) 60%,
+    rgba(0, 0, 0, 0) 0%
+  );
+}

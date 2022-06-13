@@ -1236,7 +1236,7 @@ const list = reactive([
   }
 ])
 </script>
-<style scoped>
+<style scoped lang="less">
 .sidebar {
   position: fixed;
   left: 0;
@@ -1245,6 +1245,11 @@ const list = reactive([
   margin: auto 0;
   background-color: #fafafa;
   z-index: 1;
+}
+.sort {
+  :deep(.van-sidebar-item) {
+    padding: 20px 10px;
+  }
 }
 .sort_list {
   margin-left: 85px;
