@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import axios from './api/axios'
 import './assets/css/app.css'
-import './mock/index'
 import {
   Cell,
   CellGroup,
