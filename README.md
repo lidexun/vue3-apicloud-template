@@ -12,6 +12,8 @@
 |Vant|UI框架|  https://youzan.github.io/vant/#/zh-CN/home|
 |APIcloud|混合框架| https://www.apicloud.com/
 |Fastclick|处理移动端300ms|  https://github.com/ftlabs/fastclick|
+### 二维码体验(android)
+ ![image](https://github.com/lidexun/image/blob/main/qr.png)
 
 # 预览图
  ![image](https://github.com/iDgex/apicloud-and-vant/blob/master/image/0.png)
