@@ -1,8 +1,16 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import axios from './api/axios'
 import './assets/css/app.css'
+import './mock/index'
 import {
+  Cell,
+  CellGroup,
+  Grid,
+  GridItem,
+  Empty,
+  Button,
   Tabbar,
   TabbarItem,
   Search,
@@ -20,9 +28,17 @@ import {
   Icon,
   ConfigProvider
 } from 'vant'
+
 const app = createApp(App)
+app.use(axios)
 app.use(router)
 app
+  .use(Cell)
+  .use(CellGroup)
+  .use(Grid)
+  .use(GridItem)
+  .use(Empty)
+  .use(Button)
   .use(Tabbar)
   .use(TabbarItem)
   .use(Search)
@@ -39,4 +55,5 @@ app
   .use(Tabs)
   .use(Icon)
   .use(ConfigProvider)
+
 app.mount('#app')

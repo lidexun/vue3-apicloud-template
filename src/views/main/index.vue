@@ -1,24 +1,57 @@
 <template>
-  <div class="main">
-    <van-tabbar
-      v-model="active"
-      :route="false"
-      placeholder
-      active-color="#ee0a24"
+  <main class="main">
+    <header
+      class="border_b"
+      ref="header"
+      :style="{ 'padding-top': safeArea.top + 'px' }"
     >
-      <van-tabbar-item
-        v-for="(item, index) in tabbars"
-        :key="item.name"
-        :name="item.name"
-        :icon="item.icon"
+      <van-row
+        type="flex"
+        justify="center"
+        class="home_search"
+        v-show="active === 'home'"
       >
-        {{ item.label }}
-      </van-tabbar-item>
-    </van-tabbar>
-  </div>
+        <div class="home_search_icon">
+          <van-icon name="scan" class="icon" />
+        </div>
+        <van-search
+          v-model="search"
+          placeholder="搜索9999999好物"
+          input-align="center"
+          disabled
+        />
+        <div class="home_search_icon">
+          <van-icon name="chat-o" class="icon" />
+        </div>
+      </van-row>
+    </header>
+    <div class="view"></div>
+    <div ref="footer">
+      <van-tabbar
+        v-model="active"
+        :route="false"
+        placeholder
+        active-color="#ee0a24"
+        :fixed="false"
+        :style="{ 'padding-bottom': safeArea.bottom + 'px' }"
+        :border="false"
+        @change="tabbarChange"
+      >
+        <van-tabbar-item
+          v-for="(item, index) in tabbars"
+          :key="item.name"
+          :name="item.name"
+          :icon="item.icon"
+        >
+          {{ item.label }}
+        </van-tabbar-item>
+      </van-tabbar>
+    </div>
+  </main>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, reactive, onMounted, nextTick } from 'vue'
+import { openFrame } from './../../utils/utils'
 const tabbars = [
   {
     name: 'home',
@@ -39,18 +72,82 @@ const tabbars = [
     to: '/cart'
   },
   {
-    name: 'contact',
+    name: 'user',
     label: '我',
     icon: 'contact',
     to: '/user'
   }
 ]
 const active = ref('home')
+const search = ref('')
+let safeArea = reactive({
+  top: 44,
+  bottom: 30
+})
+const header = ref(null)
+const footer = ref(null)
+
+const tabbarChange = async (name) => {
+  /*隐藏全部窗口*/
+  for (var i = 0; i < tabbars.length; i++) {
+    api.setFrameAttr({
+      name: tabbars[i].name,
+      hidden: true
+    })
+  }
+  const index = tabbars.findIndex((item) => item.name === name)
+  /* DOM更新 */
+  const item = tabbars[index]
+  const data = {
+    name: item.name,
+    url: item.to,
+    rect: {
+      marginLeft: 0,
+      marginTop: name === 'home' ? header.value.offsetHeight : 0,
+      marginBottom: footer.value.offsetHeight,
+      marginRight: 0
+    },
+    pageParam: {
+      index
+    },
+    bounces: true,
+    vScrollBarEnabled: true,
+    hScrollBarEnabled: true,
+    useWKWebView: true
+  }
+  openFrame(data)
+}
 onMounted(() => {
+  console.log(process.env)
   window.apiready = () => {
     api.setStatusBarStyle({
       style: 'dark'
     })
+    safeArea.top = api.safeArea.top
+    safeArea.bottom = api.safeArea.bottom
+    tabbarChange('home')
   }
 })
 </script>
+<style lang="less" scoped>
+.van-search {
+  flex: 1;
+}
+.home_search_icon {
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .icon {
+    font-size: 22px;
+  }
+}
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  .view {
+    flex: 1;
+  }
+}
+</style>
