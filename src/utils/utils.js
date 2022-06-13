@@ -1,14 +1,14 @@
-const ip = 'http://192.168.1.117:8081/#/'
-const t = {
-  openWin(ags) {
-    const p = {
-      ...ags,
-      name: 'winname',
-      url: 'widget://index.html#' + ags.url,
-      bounces: false,
-      pageParam: { key: 'value' }
-    }
-    api.openWin(p)
+export const openWin = (param) => {
+  const p = {
+    ...param,
+    url: process.env.VUE_APP_PATH + param.url
   }
+  api.openWin(p)
 }
-export default t
+export const openFrame = (param) => {
+  const p = {
+    ...param,
+    url: process.env.VUE_APP_PATH + param.url
+  }
+  api.openFrame(p)
+}
