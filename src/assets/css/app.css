@@ -1,13 +1,8 @@
 html {
   touch-action: manipulation;
   box-sizing: border-box;
-  font-size: -webkit-calc(100vw / 7.5 * 2);
   font-size: calc(100vw / 7.5 * 2);
-}
-@media screen and (min-width: 562.5px) {
-  html {
-    font-size: 150px;
-  }
+  font-size: 100px;
 }
 * {
   margin: 0;
