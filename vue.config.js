@@ -2,8 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const AutoImport = require('unplugin-auto-import/webpack')
 const { VantResolver } = require('unplugin-vue-components/resolvers')
 const ComponentsPlugin = require('unplugin-vue-components/webpack')
-const postCssPxToRem = require('postcss-pxtorem')
-
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 module.exports = defineConfig({
   outputDir: 'widget',
   publicPath: './',
@@ -30,6 +29,7 @@ module.exports = defineConfig({
   },
   configureWebpack: {
     plugins: [
+      new CompressionWebpackPlugin(),
       // 按需导入vant组件
       ComponentsPlugin({
         resolvers: [VantResolver()]

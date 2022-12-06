@@ -5,6 +5,7 @@ specifiers:
   '@vue/cli-plugin-router': ~5.0.0
   '@vue/cli-service': ~5.0.0
   axios: ^0.27.2
+  compression-webpack-plugin: ^10.0.0
   core-js: ^3.8.3
   dayjs: ^1.11.6
   fastclick: ^1.0.6
@@ -31,6 +32,7 @@ devDependencies:
   '@vue/cli-plugin-babel': 5.0.4_9cdfe65639711716d1fdddf38cad02d7
   '@vue/cli-plugin-router': 5.0.4_@vue+cli-service@5.0.4
   '@vue/cli-service': 5.0.4_less-loader@11.0.0
+  compression-webpack-plugin: 10.0.0
   less: 4.1.3
   less-loader: 11.0.0_less@4.1.3
   postcss-pxtorem: 6.0.0
@@ -2658,6 +2660,16 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
+    dev: true
+
+  /compression-webpack-plugin/10.0.0:
+    resolution: {integrity: sha512-wLXLIBwpul/ALcm7Aj+69X0pYT3BYt6DdPn3qrgBIh9YejV9Bju9ShhlAsjujLyWMo6SAweFIWaUoFmXZNuNrg==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      webpack: ^5.1.0
+    dependencies:
+      schema-utils: 4.0.0
+      serialize-javascript: 6.0.0
     dev: true
 
   /compression/1.7.4:
