@@ -3,8 +3,10 @@ const AutoImport = require('unplugin-auto-import/webpack')
 const { VantResolver } = require('unplugin-vue-components/resolvers')
 const ComponentsPlugin = require('unplugin-vue-components/webpack')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const { createConfig } = require('./build/index.js')
+const { createConfig, IP } = require('./build/index.js')
 createConfig()
+process.env.VUE_APP_PATH = IP()
+
 module.exports = defineConfig({
   outputDir: 'widget',
   publicPath: './',

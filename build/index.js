@@ -3,17 +3,17 @@ const fs = require('fs')
 const xml2js = require('xml2js')
 
 function createConfig() {
-  const filepath = __dirname + '/public/config.xml'
-  const configData = fs.readFileSync(filepath, 'utf-8')
+  let path =  __dirname.replace('/build', '') + '/public/config.xml'
+  const configData = fs.readFileSync(path, 'utf-8')
   xml2js.parseString(configData, (err, res) => {
     if (err) {
       throw err
     }
     // 写入ip
-    res.widget.content[0]['$'].src = ip.address() + ':' + 8080
+    res.widget.content[0]['$'].src = IP
     const builder = new xml2js.Builder()
     const xml = builder.buildObject(res)
-    fs.writeFileSync(__dirname + '/' + 'config.xml', xml, function (error) {
+    fs.writeFileSync(path.replace('/public', ''), xml, function (error) {
       if (error) {
         console.log('写入失败')
       } else {
@@ -22,7 +22,10 @@ function createConfig() {
     })
   })
 }
-
+function IP () {
+  return ip.address() + ':' + 8080
+}
 module.exports = {
-  createConfig
+  createConfig,
+  IP
 }
