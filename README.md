@@ -1,4 +1,4 @@
-# @Vue/cli5 + Vue3++APICloud
+# @Vue/cli5 + Vue3 + APICloud
 
 ### 简介
 基于@vue/cli5 上开发 APIcloud 项目混合 app 项目,在这你可以使用 es6 和各种 npm 插件,拥抱前端生态
@@ -14,8 +14,7 @@
 - ...
 
 ### 预览图
-
-<!-- ![image](https://i.hd-r.cn/8802d98a0b7391dc26e892532b6cb60f.png) -->
+![image](https://i.hd-r.cn/8802d98a0b7391dc26e892532b6cb60f.png)
 ### 准备
 - 获取项目代码
 ```sh
