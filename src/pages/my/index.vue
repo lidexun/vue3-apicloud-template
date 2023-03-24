@@ -109,7 +109,9 @@
 </template>
 <style lang="less" scoped>
 .my{
+  padding: 10px 0;
   background-color: #f6f6f6;
+  min-height: 100vh;
 
 }
 .sign_in {
@@ -208,13 +210,13 @@
 
 .wallet .van-grid-item .van-row .text {
   font-size: 16px;
-  margin-bottom: 08px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
 .btn_other {
-  padding: 2rem 1repx;
-  margin-top: 05px;
+  padding: 20px 10px;
+  margin-top: 5px;
 }
 
 .btn_other .btn_other_icon {

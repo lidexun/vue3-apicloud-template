@@ -103,7 +103,7 @@ let change = async function (active) {
     });
   }
   await nextTick();
-  var top = header.value.offsetHeight;
+  var top = (active === tabbar.list.length - 1) ? 0 : header.value.offsetHeight;
   var bottom = footer.value.offsetHeight;
   var data = {
     name: tabbar.list[tabbar.active].name,
