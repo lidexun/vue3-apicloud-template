@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
 import FastClick from 'fastclick'
+import './assets/css/app.css'
+import './assets/js/api.js'
 
 const app = createApp(App)
 app.use(router)

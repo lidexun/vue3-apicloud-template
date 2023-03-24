@@ -10,7 +10,7 @@ function createConfig() {
       throw err
     }
     // 写入ip
-    res.widget.content[0]['$'].src = IP
+    res.widget.content[0]['$'].src = 'http://' + IP()
     const builder = new xml2js.Builder()
     const xml = builder.buildObject(res)
     fs.writeFileSync(path.replace('/public', ''), xml, function (error) {
@@ -23,7 +23,7 @@ function createConfig() {
   })
 }
 function IP () {
-  return ip.address() + ':' + 8080
+  return ip.address() + ':' + 9527
 }
 module.exports = {
   createConfig,

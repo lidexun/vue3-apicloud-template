@@ -1,24 +1,17 @@
  <widget id="A6109160055223"  version="0.0.1">
+	<name>vue-apicloud</name>
+	<description>
+			Example For APICloud.
+	</description>
+	<author email="developer@apicloud.com" href="http://www.apicloud.com">
+			Developer
+	</author>
 
-    <name>vue-apicloud</name>
+	<content src="index.html" />
 
-    <description>
+	<access origin="*" />
 
-        Example For APICloud.
-
-    </description>
-
-    <author email="developer@apicloud.com" href="http://www.apicloud.com">
-
-        Developer
-
-    </author>
-
-    <content src="index.html" />
-
-    <access origin="*" />
-
-    <preference name="pageBounce" value="false"/>
+	<preference name="pageBounce" value="false"/>
 
 	<preference name="appBackground" value="rgba(0,0,0,0.0)"/>
 

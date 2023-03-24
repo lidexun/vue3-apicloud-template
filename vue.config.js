@@ -5,12 +5,16 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const { createConfig, IP } = require('./build/index.js')
 createConfig()
-process.env.VUE_APP_PATH = IP()
-
+process.env.VUE_APP_PATH = 'http://' + IP() + '/#'
 module.exports = defineConfig({
   outputDir: 'widget',
   publicPath: './',
+  assetsDir:'./',
   transpileDependencies: true,
+  devServer: {
+    // 项目启动端口之后会变成3000
+      port: 9527
+  },
   configureWebpack: {
     plugins: [
       new CompressionWebpackPlugin(),
