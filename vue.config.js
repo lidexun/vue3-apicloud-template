@@ -7,7 +7,7 @@ const { createConfig, IP } = require('./build/index.js')
 createConfig()
 process.env.VUE_APP_PATH = 'http://' + IP() + '/#'
 module.exports = defineConfig({
-  outputDir: 'widget',
+  outputDir: 'apicloud/widget',
   publicPath: './',
   assetsDir:'./',
   transpileDependencies: true,

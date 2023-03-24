@@ -35,12 +35,29 @@ pnpm install
 pnpm serve
 ```
 - 启动服务后就APICloud Studio 3 编辑器中 WIFI同步【全量】
-![image](https://i.hd-r.cn/283c5f64702895d191b1c06ac3c9698e.jpg)
-[![430a0ce7bba7472690fb3e89accaf808.gif](https://i.postimg.cc/mk6Qm0rN/430a0ce7bba7472690fb3e89accaf808.gif)](https://postimg.cc/YLYG9DYh)
-<!-- - 打包
+    - ![image](https://i.hd-r.cn/283c5f64702895d191b1c06ac3c9698e.jpg)
+- 效果
+    - ![image](https://i.hd-r.cn/7466daa74091cf4e8650c58723a234f9.jpg)
+
+### 代码打包
+- 切换代码管理
+  - ![image](https://i.hd-r.cn/d92751e51252a77dc620dc56627dae93.png)
+- 使用git
+    - ![image](https://i.hd-r.cn/e82941f1baf7a478d20a091e9c4e1fcb.png)
+- 打包生成静态文件
 ```sh
 pnpm build:dev
 ### or
 pnpm build:prod
-``` -->
+# 进入生成的文件夹
+cd apicloud
+# 提交git
+git init
+git add -A
+git commit -m 'widget'
+# git地址
+git push -f git@github.com:lidexun/vue3-apicloud.git master:apicloud
+# 构建时apicloud会获取git上的静态文件打包APP
+cd -
+```
 
