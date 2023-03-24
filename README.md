@@ -27,15 +27,15 @@ cd vue3-apicloud
 pnpm install
 ```
 - 迁移APICloud代码到Vue项目的public文件夹
-![image](https://i.hd-r.cn/935dd8ce1f5363021f3ddebb04900555.jpg)
+  - ![image](https://i.hd-r.cn/935dd8ce1f5363021f3ddebb04900555.jpg)
 - public文件夹
-![image](https://i.hd-r.cn/7f8268256f1bb265cca3899a430ece35.jpg)
+  - ![image](https://i.hd-r.cn/7f8268256f1bb265cca3899a430ece35.jpg)
 - 启动服务
 ```sh
 pnpm serve
 ```
 - 启动服务后就APICloud Studio 3 编辑器中 WIFI同步【全量】
-![image](https://i.hd-r.cn/d620e6f72edcf736baacc58d1b956b8f.png)
+![image](https://i.hd-r.cn/283c5f64702895d191b1c06ac3c9698e.jpg)
 [![430a0ce7bba7472690fb3e89accaf808.gif](https://i.postimg.cc/mk6Qm0rN/430a0ce7bba7472690fb3e89accaf808.gif)](https://postimg.cc/YLYG9DYh)
 <!-- - 打包
 ```sh
