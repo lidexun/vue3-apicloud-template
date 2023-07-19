@@ -1,9 +1,8 @@
-# @Vue/cli5 + Vue3 + APICloud
+# @Vue/cli5 + Vue3 + APICloud(hybird app)
 
 ### 简介
-基于@vue/cli5 上开发 APIcloud 项目混合 app 项目,在这你可以使用 es6 和各种 npm 插件,拥抱前端生态
+APIcloud是一款国内混合APP框架，有着丰富原生插件商城和不错的兼容性。但是开发模式比较老旧还是使用html同步导入模式并且需要重载，与现代前端开发脱轨对前端开发人员并不太友好，因此本项目基于@vue/cli5上开发APIcloud项目混合APP项目，在这可以使用Vue3全家桶，ES6和各种NPM插件，拥抱生态，敏捷开发，事半功倍。
 ### 特性
-
 - 基于 Vue-cli5
 - 最新Vue全家桶, Vue3 + Vue-router6 + Vant UI
 - 配置 Vue3 自动导入 composition api
@@ -11,6 +10,7 @@
 - 移动端适配方案(vw)
 - Less 预处理
 - Axios 封装与配置
+- 热更新
 - ...
 
 ### 预览图
@@ -27,8 +27,6 @@ pnpm install
 ```
 - 迁移APICloud代码到Vue项目的public文件夹
   - ![image](https://i.hd-r.cn/935dd8ce1f5363021f3ddebb04900555.jpg)
-- public文件夹
-  - ![image](https://i.hd-r.cn/7f8268256f1bb265cca3899a430ece35.jpg)
 - 启动服务
 ```sh
 pnpm serve
